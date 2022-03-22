@@ -1,0 +1,22 @@
+env:
+  TERM: alacritty
+  LANG: "es_ES.UTF-8"
+  LC_CTYPE: es_ES.UTF-8
+
+font:
+  bold:
+    family: UbuntuMono Nerd Font
+  italic:
+    family: UbuntuMono Nerd Font
+  normal:
+    family: UbuntuMono Nerd Font
+    style: Regular
+  size: 11.0
+
+window:
+  opacity: 0.92
+  padding:
+    x: 5
+    y: 5
+
+

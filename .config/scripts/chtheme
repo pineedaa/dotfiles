@@ -1,0 +1,5 @@
+#!/bin/sh
+files=(~/.config/alacritty/themes/*)
+
+cat ~/.config/alacritty/default > ~/.config/alacritty/alacritty.yml
+cat ${files[RANDOM % ${#files[@]}]} >> ~/.config/alacritty/alacritty.yml
