@@ -18,6 +18,7 @@
 - Lxappearance
 - Code
 - Gtop
+- Feh
 
 ### Paquetes instalados de repositorios no oficiales (AUR)
 - Spotify
@@ -25,3 +26,4 @@
 ### Librerías python (pip)
 - Psutil
 - Numpy
+- Dbus-next
