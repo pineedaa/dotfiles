@@ -1,3 +1,0 @@
-#!/bin/sh
-
-cat ~/.config/alacritty/default.yml > ~/.config/alacritty/alacritty.yml
