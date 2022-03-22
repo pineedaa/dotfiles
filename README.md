@@ -19,9 +19,11 @@
 - Code
 - Gtop
 - Feh
+- Gsimplecal
 
 ### Paquetes instalados de repositorios no oficiales (AUR)
 - Spotify
+- UbuntuMono Nerd Font
 
 ### Librerías python (pip)
 - Psutil
