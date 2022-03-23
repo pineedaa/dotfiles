@@ -395,11 +395,11 @@ taskbar=[
         font="MesloLGS NF",
         fontsize=26,
         text=left,
-        foreground=colors[2],
+        foreground="#3b4252.9",
         background=colors[18]
     ),
     widget.TaskList(
-        background="#3b4252",
+        background="#3b4252.9",
         border="#8ce7ff.3",
         unfocused_border="#5e81ac.2",
         parse_text=chname,
@@ -414,7 +414,7 @@ taskbar=[
         font="MesloLGS NF",
         fontsize=26,
         text=right,
-        foreground=colors[2],
+        foreground="#3b4252.9",
         background=colors[18]
     ),
     widget.Spacer(
