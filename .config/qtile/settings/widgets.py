@@ -408,7 +408,8 @@ taskbar=[
         txt_maximized="  ",
         txt_minimized="  ",
         title_width_method="uniform",
-        icon_size=0
+        icon_size=0,
+        mouse_callbacks = {"Button2": lambda: qtile.current_window.kill()}
     ),
     widget.TextBox(
         font="MesloLGS NF",
