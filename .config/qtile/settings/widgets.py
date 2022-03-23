@@ -26,6 +26,9 @@ def openMenu():
 def openCalendar():
     qtile.cmd_spawn("gsimplecal")
 
+def openNotes():
+    qtile.cmd_spawn("alacritty --hold -e utd")
+
 def openHtop():
     qtile.cmd_spawn("alacritty -e gtop")
 
@@ -199,7 +202,7 @@ widget_list = [
             format=' %H:%M',
             background=colors[15],
             foreground=colors[2],
-            mouse_callbacks={"Button1": openCalendar}
+            mouse_callbacks={"Button1": openCalendar, "Button3": openNotes}
         ),
         widget.TextBox(
             font="MesloLGS NF",

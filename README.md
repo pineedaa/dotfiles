@@ -23,6 +23,7 @@
 
 ### Paquetes instalados de repositorios no oficiales (AUR)
 - [UbuntuMono Nerd Font](https://aur.archlinux.org/packages/nerd-fonts-ubuntu-mono)
+- [Dunst](https://github.com/kawaki-san/utd-rs)
 
 ### Librerías python (pip)
 - [Psutil](https://pypi.org/project/psutil/)
