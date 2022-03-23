@@ -4,6 +4,16 @@ import numpy, os, random
 from .theme import colors
 from libqtile import widget, qtile
 
+def chname(text):
+    for string in ["Firefox", "Alacritty", "Thunar", "Spotify", "Code", "MARS", "DrRacket", "@cArchLinux"]:
+        if string in text:
+            text = string
+            if text == "@cArchLinux":
+                text = "Alacritty"
+        else:
+            text = text
+    return text
+
 def changewp():
     wallpapers = os.listdir('/home/carlos/Images/Wallpapers/')
     os.system('feh --bg-fill /home/carlos/Images/Wallpapers/' + wallpapers[random.randint(0, numpy.size(wallpapers) - 1)])
@@ -132,6 +142,7 @@ widget_list = [
             background=colors[18],
             length=12
         ),
+        #widget.TaskList(),
         widget.TextBox(
             text="",
             background=colors[18]
@@ -379,5 +390,40 @@ widget_list = [
             background=colors[18],
             length=10
         )
+]
+
+taskbar=[
+    widget.Spacer(
+        background=colors[18]
+    ),
+    widget.TextBox(
+        font="MesloLGS NF",
+        fontsize=26,
+        text=left,
+        foreground=colors[2],
+        background=colors[18]
+    ),
+    widget.TaskList(
+        background="#3b4252",
+        border="#8ce7ff.3",
+        unfocused_border="#5e81ac.2",
+        parse_text=chname,
+        highlight_method="block",
+        txt_floating="  ",
+        txt_maximized="  ",
+        txt_minimized="  ",
+        title_width_method="uniform",
+        icon_size=0
+    ),
+    widget.TextBox(
+        font="MesloLGS NF",
+        fontsize=26,
+        text=right,
+        foreground=colors[2],
+        background=colors[18]
+    ),
+    widget.Spacer(
+        background=colors[18]
+    )
 ]
 

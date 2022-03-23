@@ -3,7 +3,7 @@
 from libqtile import layout
 
 layout_theme = {
-        "margin": 5,
+        "margin": 8,
         "border_width": 3,
         "border_focus": "#f3f5fb",
         "border_normal": "#3b4252",
