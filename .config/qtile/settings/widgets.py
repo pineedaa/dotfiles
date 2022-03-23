@@ -62,10 +62,6 @@ left = ""
 right = ""
 
 widget_list = [
-        widget.Spacer(
-            background=colors[18],
-            length=10
-        ),
         widget.TextBox(
             font="MesloLGS NF",
             fontsize=26,
@@ -385,10 +381,6 @@ widget_list = [
             text=right,
             foreground=colors[11],
             background=colors[18]
-        ),
-        widget.Spacer(
-            background=colors[18],
-            length=10
         )
 ]
 
