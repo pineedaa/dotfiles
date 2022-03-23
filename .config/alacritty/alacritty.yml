@@ -3,34 +3,6 @@ env:
   LANG: "es_ES.UTF-8"
   LC_CTYPE: es_ES.UTF-8
 
-colors:
-  name: Google (dark)
-  author: Chris Kempson
-  primary:
-    background: "#1d1f21"
-    foreground: "#c5c8c6"
-  cursor:
-    text: "#1d1f21"
-    cursor: "#c5c8c6"
-  normal:
-    black: "#1d1f21"
-    red: "#cc342b"
-    green: "#198844"
-    yellow: "#fba922"
-    blue: "#3971ed"
-    magenta: "#a36ac7"
-    cyan: "#3971ed"
-    white: "#c5c8c6"
-  bright:
-    black: "#969896"
-    red: "#cc342b"
-    green: "#198844"
-    yellow: "#fba922"
-    blue: "#3971ed"
-    magenta: "#a36ac7"
-    cyan: "#3971ed"
-    white: "#ffffff"
-
 font:
   bold:
     family: UbuntuMono Nerd Font
@@ -40,8 +12,43 @@ font:
     family: UbuntuMono Nerd Font
     style: Regular
   size: 11.0
+
 window:
   opacity: 0.92
   padding:
     x: 5
     y: 5
+
+
+colors:
+  cursor:
+    text: '#fefff2'
+    cursor: '#f0cc09'
+
+  selection:
+    text: '#b5b5b5'
+    background: '#18354f'
+
+  primary:
+    background: '#132738'
+    foreground: '#ffffff'
+
+  normal:
+    black:   '#000000'
+    red:     '#ff0000'
+    green:   '#38de21'
+    yellow:  '#ffe50a'
+    blue:    '#1460d2'
+    magenta: '#ff005d'
+    cyan:    '#00bbbb'
+    white:   '#bbbbbb'
+
+  bright:
+    black:   '#555555'
+    red:     '#f40e17'
+    green:   '#3bd01d'
+    yellow:  '#edc809'
+    blue:    '#5555ff'
+    magenta: '#ff55ff'
+    cyan:    '#6ae3fa'
+    white:   '#ffffff'
