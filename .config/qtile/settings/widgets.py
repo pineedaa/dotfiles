@@ -473,27 +473,13 @@ secondary_widgets = [
         foreground=colors[14],
         background=colors[18]
     ),
-    widget.GroupBox(
-            margin_y=2,
-            margin_x=0,
-            padding_y=6,
-            padding_x=4,
-            disable_drag=True,
-            use_mouse_wheel=True,
-            active=colors[13],
-            inactive=colors[10],
-            rounded=True,
-            highlight_color=colors[2],
-            block_highlight_text_color=colors[6],
-            highlight_method="text",
-            this_current_screen_border=colors[4],
-            this_screen_border=colors[4],
-            other_current_screen_border=colors[14],
-            other_screen_border=colors[14],
-            foreground=colors[1],
-            background=colors[14],
-            urgent_border=colors[3]
-        ),
+    widget.AGroupBox(
+        background=colors[14],
+        foreground=colors[4],
+        border=colors[18],
+        margin_x=0,
+        padding_x=-5
+    ),
     widget.TextBox(
         font="MesloLGS NF",
         fontsize=26,
