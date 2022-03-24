@@ -2,7 +2,7 @@
 
 import numpy, os, random
 from .theme import colors
-from libqtile import widget, qtile
+from libqtile import widget, qtile, lazy
 
 def chname(text):
     for string in ["Firefox", "Alacritty", "Thunar", "Spotify", "Code", "MARS", "DrRacket", "@cArchLinux"]:
@@ -22,6 +22,9 @@ def openMenu():
     themes = os.listdir('/home/carlos/.config/rofi/themes')
     theme = themes[random.randint(0, numpy.size(themes) - 1)]
     qtile.cmd_spawn("rofi -show run -theme /home/carlos/.config/rofi/themes/" + theme)
+
+def dualMonitor(): # WARNING!!! This configuration only works on my personal monitor // CUADOD!!! Esta configuración solo funciona en mi monitor
+    os.system("xrandr --output eDP1 --primary --mode 1920x1080 --pos 238x1440 --rotate normal --output DP1 --mode 2560x1440 --pos 0x0 --rotate normal --output DP2 --off --output VIRTUAL1 --off")
 
 def openCalendar():
     qtile.cmd_spawn("gsimplecal")
@@ -353,7 +356,7 @@ widget_list = [
             text=" ",
             background=colors[6],
             foreground=colors[2],
-            mouse_callbacks={'Button1' : openarandr}
+            mouse_callbacks={'Button1' : openarandr, 'Button3': dualMonitor}
         ),
         widget.TextBox(
             font="MesloLGS NF",
@@ -416,6 +419,86 @@ taskbar=[
         fontsize=26,
         text=right,
         foreground="#3b4252.9",
+        background=colors[18]
+    ),
+    widget.Spacer(
+        background=colors[18]
+    )
+]
+
+taskbar2=[
+    widget.Spacer(
+        background=colors[18]
+    ),
+    widget.TextBox(
+        font="MesloLGS NF",
+        fontsize=26,
+        text=left,
+        foreground="#3b4252.9",
+        background=colors[18]
+    ),
+    widget.TaskList(
+        background="#3b4252.9",
+        border="#8ce7ff.3",
+        unfocused_border="#5e81ac.2",
+        parse_text=chname,
+        highlight_method="block",
+        txt_floating="  ",
+        txt_maximized="  ",
+        txt_minimized="  ",
+        title_width_method="uniform",
+        icon_size=0,
+        mouse_callbacks = {"Button2": lambda: qtile.current_window.kill()}
+    ),
+    widget.TextBox(
+        font="MesloLGS NF",
+        fontsize=26,
+        text=right,
+        foreground="#3b4252.9",
+        background=colors[18]
+    ),
+    widget.Spacer(
+        background=colors[18]
+    )
+]
+
+secondary_widgets = [
+    widget.Spacer(
+        background=colors[18]
+    ),
+    widget.TextBox(
+        font="MesloLGS NF",
+        fontsize=26,
+        text=left,
+        foreground=colors[14],
+        background=colors[18]
+    ),
+    widget.GroupBox(
+            margin_y=2,
+            margin_x=0,
+            padding_y=6,
+            padding_x=4,
+            disable_drag=True,
+            use_mouse_wheel=True,
+            active=colors[13],
+            inactive=colors[10],
+            rounded=True,
+            highlight_color=colors[2],
+            block_highlight_text_color=colors[6],
+            highlight_method="text",
+            this_current_screen_border=colors[4],
+            this_screen_border=colors[4],
+            other_current_screen_border=colors[14],
+            other_screen_border=colors[14],
+            foreground=colors[1],
+            background=colors[14],
+            urgent_border=colors[3]
+        ),
+    widget.TextBox(
+        font="MesloLGS NF",
+        fontsize=26,
+        text=right,
+        foreground=colors[14],
         background=colors[18]
     ),
     widget.Spacer(
