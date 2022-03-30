@@ -57,39 +57,9 @@ nmap <leader>rn <plug>(coc-rename)
 nnoremap <leader>n :nerdtreetoggle<cr>
 let NERDTreeQuitOpen=1
 
-
-" air-line
-let g:airline_powerline_fonts = 1
-let g:airline_theme='everforest' " tema de airline
+" airline theme
+let g:airline_theme='minimalist'
 let g:airline#extensions#tabline#enabled = 1 " barra superior con los buffers abiertos
-
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
-" caracteres unicode
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
-
-" caracteres airline
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
-
 
 " plugins
 call plug#begin('~/.vim/plugged')
@@ -105,9 +75,13 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jiangmiao/auto-pairs'
 Plug 'sainnhe/vim-color-forest-night'
+Plug 'hzchirs/vim-material'
+Plug 'dikiaap/minimalist'
 
 call plug#end()
 
+"let g:material_style='oceanic'
+set background=dark
 colorscheme everforest
 
 " pip3 install flake8 for coding check

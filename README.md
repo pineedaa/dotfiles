@@ -12,7 +12,6 @@
 - [Picom](https://archlinux.org/packages/community/x86_64/picom/)
 - [Brightnessctl](https://archlinux.org/packages/community/x86_64/brightnessctl/)
 - [Pavucontrol](https://archlinux.org/packages/extra/x86_64/pavucontrol/)
-- [Lowbattery]()
 - [Arandr](https://archlinux.org/packages/community/any/arandr/)
 - [Lxappearance](https://archlinux.org/packages/community/x86_64/lxappearance/)
 - [Code](https://archlinux.org/packages/community/x86_64/code/)
@@ -23,7 +22,8 @@
 
 ### Paquetes instalados de repositorios no oficiales (AUR)
 - [UbuntuMono Nerd Font](https://aur.archlinux.org/packages/nerd-fonts-ubuntu-mono)
-- [Dunst](https://github.com/kawaki-san/utd-rs)
+- [Utd](https://github.com/kawaki-san/utd-rs)
+- [Lowbattery](https://aur.archlinux.org/packages/low-battery-warning-git)
 
 ### Librerías python (pip)
 - [Psutil](https://pypi.org/project/psutil/)
