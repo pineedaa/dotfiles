@@ -29,13 +29,13 @@ def autostart():
     os.system("picom &")
 
 grupos = {
-        1: Group("", layout="bsp"),
-        2: Group(" ", layout="monadtall"),
-        3: Group(" ", matches=[Match(wm_class=["firefox"])]),
+        1: Group(""),
+        2: Group(" "),
+        3: Group(" "),
         4: Group(" "),
         5: Group(" "),
         6: Group(" "),
-        7: Group(" ", matches=[Match(wm_class=["Spotify"])])
+        7: Group(" ")
         }
 
 groups = [grupos[i] for i in grupos]

@@ -23,8 +23,8 @@ def openMenu():
     theme = themes[random.randint(0, numpy.size(themes) - 1)]
     qtile.cmd_spawn("rofi -show run -theme /home/carlos/.config/rofi/themes/" + theme)
 
-def dualMonitor(): # WARNING!!! This configuration only works on my personal monitor // CUADOD!!! Esta configuración solo funciona en mi monitor
-    os.system("xrandr --output eDP1 --primary --mode 1920x1080 --pos 238x1440 --rotate normal --output DP1 --mode 2560x1440 --pos 0x0 --rotate normal --output DP2 --off --output VIRTUAL1 --off")
+def onlyMonitor():
+    os.system("xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output VIRTUAL1 --off")
 
 def openCalendar():
     qtile.cmd_spawn("gsimplecal")
@@ -93,17 +93,17 @@ widget_list = [
         widget.Spacer(
             background=colors[18],
             length=12,
-            mouse_callbacks={'Button1' : openconf}
+            mouse_callbacks={'Button1': openconf}
         ),
         widget.TextBox(
             text="",
             background=colors[18],
-            mouse_callbacks={'Button1' : openconf}
+            mouse_callbacks={'Button1': openconf}
         ),
         widget.Spacer(
             background=colors[18],
             length=12,
-            mouse_callbacks={'Button1' : openconf}
+            mouse_callbacks={'Button1': openconf}
         ),
         widget.TextBox(
             font="MesloLGS NF",
@@ -144,7 +144,6 @@ widget_list = [
             background=colors[18],
             length=12
         ),
-        #widget.TaskList(),
         widget.TextBox(
             text="",
             background=colors[18]
@@ -225,14 +224,14 @@ widget_list = [
             text=left,
             foreground=colors[6],
             background=colors[18],
-            mouse_callbacks={'Button1' : open_nm, 'Button3' : openbt}
+            mouse_callbacks={'Button1': open_nm, 'Button3': openbt}
         ),
         widget.Wlan(
             foreground=colors[2],
             background=colors[6],
             format='  {essid}',
             disconnected_message="睊 ",
-            mouse_callbacks={'Button1' : open_nm, 'Button3' : openbt}
+            mouse_callbacks={'Button1': open_nm, 'Button3': openbt}
         ),
         widget.TextBox(
             font="MesloLGS NF",
@@ -240,7 +239,7 @@ widget_list = [
             text=right,
             foreground=colors[6],
             background=colors[18],
-            mouse_callbacks={'Button1' : open_nm, 'Button3' : openbt}
+            mouse_callbacks={'Button1': open_nm, 'Button3': openbt}
         ),
         widget.Spacer(
             background=colors[18],
@@ -316,13 +315,13 @@ widget_list = [
             text=left,
             foreground=colors[5],
             background=colors[18],
-            mouse_callbacks={'Button1' : show_notifies, 'Button3' : delete_notifications}
+            mouse_callbacks={'Button1': show_notifies, 'Button3': delete_notifications}
         ),
         widget.TextBox(
             text=" ",
             foreground=colors[2],
             background=colors[5],
-            mouse_callbacks={'Button1' : show_notifies, 'Button3' : delete_notifications}
+            mouse_callbacks={'Button1': show_notifies, 'Button3': delete_notifications}
         ),
         widget.TextBox(
             font="MesloLGS NF",
@@ -330,7 +329,7 @@ widget_list = [
             text=right,
             foreground=colors[5],
             background=colors[18],
-            mouse_callbacks={'Button1' : show_notifies, 'Button3' : delete_notifications}
+            mouse_callbacks={'Button1': show_notifies, 'Button3': delete_notifications}
         ),
         widget.Spacer(
             background=colors[18],
@@ -350,13 +349,13 @@ widget_list = [
             text=left,
             foreground=colors[6],
             background=colors[18],
-            mouse_callbacks={'Button1' : openarandr}
+            mouse_callbacks={'Button1': openarandr}
         ),
         widget.TextBox(
             text=" ",
             background=colors[6],
             foreground=colors[2],
-            mouse_callbacks={'Button1' : openarandr, 'Button3': dualMonitor}
+            mouse_callbacks={'Button1': openarandr, 'Button3': onlyMonitor}
         ),
         widget.TextBox(
             font="MesloLGS NF",
@@ -364,7 +363,7 @@ widget_list = [
             text=right,
             foreground=colors[6],
             background=colors[18],
-            mouse_callbacks={'Button1' : openarandr}
+            mouse_callbacks={'Button1': openarandr}
         ),
         widget.Spacer(
             background=colors[18],
@@ -476,9 +475,7 @@ secondary_widgets = [
     widget.AGroupBox(
         background=colors[14],
         foreground=colors[4],
-        border=colors[18],
-        margin_x=0,
-        padding_x=-5
+        border=colors[18]
     ),
     widget.TextBox(
         font="MesloLGS NF",
