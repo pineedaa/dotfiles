@@ -4,9 +4,8 @@ import os, numpy, random
 import subprocess, json
 
 from settings.keys import mod, keys
-from settings.theme import colors
-from settings.screens import screens
 from settings.layout import layouts
+from settings.screens import screens
 from settings.widgets import widget_defaults, extension_defaults
 
 from typing import List  # noqa: F401
@@ -24,7 +23,8 @@ def get_key(name):
 
 @hook.subscribe.startup_once
 def autostart():
-    changewp()
+    # changewp()
+    os.system("feh --bg-fill /hom/carlos/Images/Wallpapers/base.png")
     os.system("lowbattery &")
     os.system("picom &")
 
@@ -65,7 +65,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='ssh-askpass'),  # ssh-askpass
     Match(title='branchdialog'),  # gitk
     Match(title='pinentry'),  # GPG key password entry
-], border_focus=colors[2])
+], border_focus="#f8f8f2")
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 reconfigure_screens = True

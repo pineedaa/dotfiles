@@ -2,15 +2,24 @@
 
 from libqtile import layout
 
+colors = [
+        "#282a36",
+        "#44475a",
+        "#5a5e77",
+        "#717593",
+        "#f8f8f2",
+        "#000000"
+        ]
+
 layout_theme = {
-        "margin": 8,
+        "margin": 6,
         "border_width": 3,
-        "border_focus": "#ebcb8b",
-        "border_normal": "#3b4252",
+        "border_focus": "#f8f8f2",
+        "border_normal": "#44475a",
     }
 
 layouts = [
-    layout.Bsp(margin=6, border_width=3, border_focus="#ebcb8b", border_normal="#3b4252"),
-    layout.MonadTall(margin=8, border_width=3, border_focus="#ebcb8b", border_normal="#3b4252"),
+    layout.Bsp(**layout_theme),
+    layout.MonadTall(**layout_theme),
     layout.Max(**layout_theme)
 ]

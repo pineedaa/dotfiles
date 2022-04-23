@@ -77,12 +77,13 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'sainnhe/vim-color-forest-night'
 Plug 'hzchirs/vim-material'
 Plug 'dikiaap/minimalist'
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
 "let g:material_style='oceanic'
 set background=dark
-colorscheme everforest
+colorscheme onedark
 
 " pip3 install flake8 for coding check
 " sudo pacman -S ccls-git (ccls si falla) the code completion of C/C++
