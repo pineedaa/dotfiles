@@ -204,6 +204,32 @@ widget_list = [
         mouse_callbacks={'Button1': open_nm, 'Button3': openbt}
     ),
     widget.Spacer(
+        length=24,
+        background=transparency()
+    ),
+    widget.TextBox(
+        text=left,
+        font="MesloLGS NF",
+        fontsize=26,
+        foreground=transparency(colors[2], 8),
+        background=transparency(),
+        mouse_callbacks={"Button1": show_notifies}
+    ),
+    widget.TextBox(
+        text=" ",
+        foreground=colors[4],
+        background=transparency(colors[2], 8),
+        mouse_callbacks={"Button1": show_notifies}
+    ),
+    widget.TextBox(
+        text=right,
+        font="MesloLGS NF",
+        fontsize=26,
+        foreground=transparency(colors[2], 8),
+        background=transparency(),
+        mouse_callbacks={"Button1": show_notifies}
+    ),        
+    widget.Spacer(
         length=12,
         background=transparency()
     ),
@@ -230,6 +256,34 @@ widget_list = [
         foreground=transparency(colors[2], 8),
         background=transparency(),
     ),
+    widget.Spacer(
+        length=12,
+        background=transparency()
+    ),
+    widget.TextBox(
+        text=left,
+        font="MesloLGS NF",
+        fontsize=26,
+        foreground=transparency(colors[2], 8),
+        background=transparency(),
+    ),
+    widget.TextBox(
+        text="墳 ",
+        foreground=colors[4],
+        background=transparency(colors[2], 8),
+    ),
+    widget.PulseVolume(
+        foreground=colors[4],
+        background=transparency(colors[2], 8),
+        limit_max_volume=True
+    ),
+    widget.TextBox(
+        text=right,
+        font="MesloLGS NF",
+        fontsize=26,
+        foreground=transparency(colors[2], 8),
+        background=transparency(),
+    ),        
     widget.Spacer(
         length=12,
         background=transparency()
