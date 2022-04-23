@@ -78,6 +78,7 @@ Plug 'sainnhe/vim-color-forest-night'
 Plug 'hzchirs/vim-material'
 Plug 'dikiaap/minimalist'
 Plug 'joshdick/onedark.vim'
+Plug 'octol/vim-cpp-enhanced-highlight'
 
 call plug#end()
 
