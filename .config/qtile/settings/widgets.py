@@ -213,13 +213,13 @@ widget_list = [
         fontsize=26,
         foreground=transparency(colors[2], 8),
         background=transparency(),
-        mouse_callbacks={"Button1": show_notifies}
+        mouse_callbacks={"Button1": show_notifies, "Button3": delete_notifications}
     ),
     widget.TextBox(
         text=" ",
         foreground=colors[4],
         background=transparency(colors[2], 8),
-        mouse_callbacks={"Button1": show_notifies}
+        mouse_callbacks={"Button1": show_notifies, "Button3": delete_notifications}
     ),
     widget.TextBox(
         text=right,
@@ -227,7 +227,7 @@ widget_list = [
         fontsize=26,
         foreground=transparency(colors[2], 8),
         background=transparency(),
-        mouse_callbacks={"Button1": show_notifies}
+        mouse_callbacks={"Button1": show_notifies, "Button3": delete_notifications}
     ),        
     widget.Spacer(
         length=12,
