@@ -14,19 +14,22 @@ from libqtile import hook, qtile, layout
 from libqtile.config import Group, Match, Key
 from libqtile.lazy import lazy
 
-def changewp():
-    wallpapers = os.listdir('/home/carlos/Images/Wallpapers/')
-    os.system('feh --bg-fill /home/carlos/Images/Wallpapers/' + wallpapers[random.randint(0, numpy.size(wallpapers) - 1)])
-
-def get_key(name):
-    return [k for k, g in grupos.items() if g.name == name][0]
-
+# Esta función se llamará cada vez que encendamos el ordenador
 @hook.subscribe.startup_once
 def autostart():
     # changewp()
     os.system("feh --bg-fill ~/.config/qtile/settings/wallpaper.png")
     os.system("lowbattery &")
     os.system("picom &")
+
+# Función que utilizaremos para cambiar de area de trabajo
+def get_key(name):
+    return [k for k, g in grupos.items() if g.name == name][0]
+
+# Con esta función ponemos un fondo de pantalla aleatorio en la ruta que especifiquemos
+def changewp():
+    wallpapers = os.listdir('~/Images/Wallpapers/')
+    os.system('feh --bg-fill ~/Images/Wallpapers/' + wallpapers[random.randint(0, numpy.size(wallpapers) - 1)])
 
 grupos = {
         1: Group(""),

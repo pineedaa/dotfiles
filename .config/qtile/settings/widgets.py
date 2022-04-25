@@ -21,6 +21,7 @@ colors = [
         "#000000"
         ]
 
+# Función que sirve para asignarle transparencia a un color
 def transparency(color = "#000000", opacity = 0):
     return color + "." + str(opacity)
 
@@ -34,48 +35,39 @@ def chname(text):
             text = text
     return text
 
+# Con esta función cambiamos a un fondo de pantalla aleatorio dentro de la carpeta que pongamos
 def changewp():
-    wallpapers = os.listdir('/home/carlos/Images/Wallpapers/')
-    os.system('feh --bg-fill /home/carlos/Images/Wallpapers/' + wallpapers[random.randint(0, numpy.size(wallpapers) - 1)])
+    wallpapers = os.listdir('~/Images/Wallpapers/')
+    os.system('feh --bg-fill ~/Images/Wallpapers/' + wallpapers[random.randint(0, numpy.size(wallpapers) - 1)])
 
+# Abre rofi con un tema aleatorio dentro de la carpeta themes de rofi
 def openRandomMenu():
-    themes = os.listdir('/home/carlos/.config/rofi/themes')
+    themes = os.listdir('~/.config/rofi/themes')
     theme = themes[random.randint(0, numpy.size(themes) - 1)]
-    qtile.cmd_spawn("rofi -show run -theme /home/carlos/.config/rofi/themes/" + theme)
+    qtile.cmd_spawn("rofi -show run -theme ~/.config/rofi/themes/" + theme)
 
+# Abre rofi
 def openMenu():
     qtile.cmd_spawn("rofi -show run")
-
-def onlyMonitor():
-    os.system("xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output VIRTUAL1 --off")
 
 def openCalendar():
     qtile.cmd_spawn("gsimplecal")
 
-def openNotes():
-    qtile.cmd_spawn("alacritty --hold -e utd")
-
-def openHtop():
-    qtile.cmd_spawn("alacritty -e gtop")
-
+# Abre networkmanager en tui
 def open_nm():
     qtile.cmd_spawn("alacritty -e nmtui")
 
+# Recupera las notificaciones
 def show_notifies():
     os.system("dunstctl history-pop")
 
+# Borra las notificaciones
 def delete_notifications():
     os.system("dunstctl close-all")
 
+# Abre el bluetoothctl en cosola
 def openbt():
     qtile.cmd_spawn("alacritty -e bluetoothctl")
-
-def openconf():
-    qtile.cmd_spawn("alacritty -e code /home/carlos/.config/qtile/")
-
-def openarandr():
-    qtile.cmd_spawn("arandr")
-
 
 widget_defaults = dict(
     font='UbuntuMono Nerd Font',
@@ -171,7 +163,7 @@ widget_list = [
         format=' %H:%M',
         background=transparency(colors[2], 8),
         foreground=colors[4],
-        mouse_callbacks={"Button1": openCalendar, "Button3": openNotes}
+        mouse_callbacks={"Button1": openCalendar}
     ),
     widget.TextBox(
         text=right,
