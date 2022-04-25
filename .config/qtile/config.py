@@ -24,7 +24,7 @@ def get_key(name):
 @hook.subscribe.startup_once
 def autostart():
     # changewp()
-    os.system("feh --bg-fill /home/carlos/Images/Wallpapers/base.png")
+    os.system("feh --bg-fill ~/.config/qtile/settings/wallpaper.png")
     os.system("lowbattery &")
     os.system("picom &")
 

@@ -21,8 +21,8 @@ colors = [
         "#000000"
         ]
 
-def transparency(color = "#000000", transparency_level = 0):
-    return color + "." + str(transparency_level)
+def transparency(color = "#000000", opacity = 0):
+    return color + "." + str(opacity)
 
 def chname(text):
     for string in ["Firefox", "Alacritty", "Thunar", "Spotify", "Code", "MARS", "DrRacket", "@cArchLinux"]:
@@ -38,10 +38,13 @@ def changewp():
     wallpapers = os.listdir('/home/carlos/Images/Wallpapers/')
     os.system('feh --bg-fill /home/carlos/Images/Wallpapers/' + wallpapers[random.randint(0, numpy.size(wallpapers) - 1)])
 
-def openMenu():
+def openRandomMenu():
     themes = os.listdir('/home/carlos/.config/rofi/themes')
     theme = themes[random.randint(0, numpy.size(themes) - 1)]
     qtile.cmd_spawn("rofi -show run -theme /home/carlos/.config/rofi/themes/" + theme)
+
+def openMenu():
+    qtile.cmd_spawn("rofi -show run")
 
 def onlyMonitor():
     os.system("xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output VIRTUAL1 --off")
