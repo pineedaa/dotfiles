@@ -1,6 +1,10 @@
 # dotfiles
 ### _Carlos Pineda_
 
+![image](imagen.png)
+![image](imagen2.png)
+![image](imagen3.png)
+
 ### Paquetes instalados de repositorios oficiales
 - [Python](https://archlinux.org/packages/core/x86_64/python/)
 - [Rofi](https://archlinux.org/packages/community/x86_64/rofi/)
