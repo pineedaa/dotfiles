@@ -58,7 +58,7 @@ nnoremap <leader>n :nerdtreetoggle<cr>
 let NERDTreeQuitOpen=1
 
 " airline theme
-let g:airline_theme='minimalist'
+let g:airline_theme='lualine'
 let g:airline#extensions#tabline#enabled = 1 " barra superior con los buffers abiertos
 
 " plugins
@@ -79,6 +79,9 @@ Plug 'hzchirs/vim-material'
 Plug 'dikiaap/minimalist'
 Plug 'joshdick/onedark.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'nvim-lualine/lualine.nvim'
+" If you want to have icons in your statusline choose one of these
+Plug 'kyazdani42/nvim-web-devicons'
 
 call plug#end()
 
