@@ -18,9 +18,9 @@ from libqtile.lazy import lazy
 @hook.subscribe.startup_once
 def autostart():
     # changewp()
-    os.system("feh --bg-fill ~/.config/qtile/settings/wallpaper.png")
-    os.system("lowbattery &")
-    os.system("picom &")
+    os.system('feh --bg-fill ~/.config/qtile/settings/wallpaper.png')
+    os.system('lowbattery &')
+    os.system('picom &')
 
 # Función que utilizaremos para cambiar de area de trabajo
 def get_key(name):
@@ -32,13 +32,13 @@ def changewp():
     os.system('feh --bg-fill ~/Images/Wallpapers/' + wallpapers[random.randint(0, numpy.size(wallpapers) - 1)])
 
 grupos = {
-        1: Group(""),
-        2: Group(" "),
-        3: Group(" "),
-        4: Group(" "),
-        5: Group(" "),
-        6: Group(" "),
-        7: Group(" ")
+        1: Group(''),
+        2: Group(' '),
+        3: Group(' '),
+        4: Group(' '),
+        5: Group(' '),
+        6: Group(' '),
+        7: Group(' ')
         }
 
 groups = [grupos[i] for i in grupos]
@@ -47,11 +47,11 @@ for i in groups:
     keys.extend([
         # mod + índice para ir al grupo
         Key([mod], str(get_key(i.name)), lazy.group[i.name].toscreen(),
-            desc="Cambiar al grupo {}".format(i.name)),
+            desc='Cambiar al grupo {}'.format(i.name)),
 
         # mod + shift + índice del grupo para mover la ventana al grupo e ir
-        Key([mod, "shift"], str(get_key(i.name)), lazy.window.togroup(i.name, switch_group=True),
-            desc="Mover la ventana e ir al grupo {}".format(i.name))
+        Key([mod, 'shift'], str(get_key(i.name)), lazy.window.togroup(i.name, switch_group=True),
+            desc='Mover la ventana e ir al grupo {}'.format(i.name))
     ])
 
 dgroups_key_binder = None
@@ -68,9 +68,9 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='ssh-askpass'),  # ssh-askpass
     Match(title='branchdialog'),  # gitk
     Match(title='pinentry'),  # GPG key password entry
-], border_focus="#f8f8f2")
+], border_focus='#f8f8f2')
 auto_fullscreen = True
-focus_on_window_activation = "smart"
+focus_on_window_activation = 'smart'
 reconfigure_screens = True
 
 # If things like steam games want to auto-minimize themselves when losing
@@ -85,4 +85,4 @@ auto_minimize = True
 #
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
-wmname = "LG3D"
+wmname = 'LG3D'
