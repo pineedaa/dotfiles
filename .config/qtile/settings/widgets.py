@@ -7,30 +7,30 @@ widget_defaults = dict(
     font='UbuntuMono Nerd Font',
     fontsize=18,
     padding=0,
-    background="#282a36"
+    background='#282a36'
 )
 
 extension_defaults = widget_defaults.copy()
 
 colors = [
-        "#282a36",
-        "#44475a",
-        "#5a5e77",
-        "#717593",
-        "#f8f8f2",
-        "#000000"
+        '#282a36',
+        '#44475a',
+        '#5a5e77',
+        '#717593',
+        '#f8f8f2',
+        '#000000'
         ]
 
 # Función que sirve para asignarle transparencia a un color
-def transparency(color = "#000000", opacity = 0):
-    return color + "." + str(opacity)
+def transparency(color = '#000000', opacity = 0):
+    return color + '.' + str(opacity)
 
 def chname(text):
-    for string in ["Firefox", "Alacritty", "Thunar", "Spotify", "Code", "MARS", "DrRacket", "@cArchLinux"]:
+    for string in ['Firefox', 'Alacritty', 'Thunar', 'Spotify', 'Code', 'MARS', 'DrRacket', '@cArchLinux']:
         if string in text:
             text = string
-            if text == "@cArchLinux":
-                text = "Alacritty"
+            if text == '@cArchLinux':
+                text = 'Alacritty'
         else:
             text = text
     return text
@@ -44,30 +44,30 @@ def changewp():
 def openRandomMenu():
     themes = os.listdir('~/.config/rofi/themes')
     theme = themes[random.randint(0, numpy.size(themes) - 1)]
-    qtile.cmd_spawn("rofi -show run -theme ~/.config/rofi/themes/" + theme)
+    qtile.cmd_spawn('rofi -show run -theme ~/.config/rofi/themes/' + theme)
 
 # Abre rofi
 def openMenu():
-    qtile.cmd_spawn("rofi -show run")
+    qtile.cmd_spawn('rofi -show run')
 
 def openCalendar():
-    qtile.cmd_spawn("gsimplecal")
+    qtile.cmd_spawn('gsimplecal')
 
 # Abre networkmanager en tui
 def open_nm():
-    qtile.cmd_spawn("alacritty -e nmtui")
+    qtile.cmd_spawn('alacritty -e nmtui')
 
 # Recupera las notificaciones
 def show_notifies():
-    os.system("dunstctl history-pop")
+    os.system('dunstctl history-pop')
 
 # Borra las notificaciones
 def delete_notifications():
-    os.system("dunstctl close-all")
+    os.system('dunstctl close-all')
 
 # Abre el bluetoothctl en cosola
 def openbt():
-    qtile.cmd_spawn("alacritty -e bluetoothctl")
+    qtile.cmd_spawn('alacritty -e bluetoothctl')
 
 widget_defaults = dict(
     font='UbuntuMono Nerd Font',
@@ -79,8 +79,8 @@ widget_defaults = dict(
 extension_defaults = widget_defaults.copy()
 
 
-left = ""
-right = ""
+left = ''
+right = ''
 
 widget_list = [
     widget.Spacer(
@@ -89,25 +89,25 @@ widget_list = [
     ),
     widget.TextBox(
         text=left,
-        font="MesloLGS NF",
+        font='MesloLGS NF',
         fontsize=26,
         foreground=transparency(colors[2], 8),
         background=transparency(),
-        mouse_callbacks={"Button1": openMenu}
+        mouse_callbacks={'Button1': openMenu}
     ),
     widget.TextBox(
-        text=" ",
+        text=' ',
         foreground=colors[4],
         background=transparency(colors[2], 8),
-        mouse_callbacks={"Button1": openMenu}
+        mouse_callbacks={'Button1': openMenu}
     ),
     widget.TextBox(
         text=right,
-        font="MesloLGS NF",
+        font='MesloLGS NF',
         fontsize=26,
         foreground=transparency(colors[2], 8),
         background=transparency(),
-        mouse_callbacks={"Button1": openMenu}
+        mouse_callbacks={'Button1': openMenu}
     ),        
     widget.Spacer(
         length=12,
@@ -115,7 +115,7 @@ widget_list = [
     ),
     widget.TextBox(
         text=left,
-        font="MesloLGS NF",
+        font='MesloLGS NF',
         fontsize=26,
         foreground=transparency(colors[2], 8),
         background=transparency(),
@@ -132,7 +132,7 @@ widget_list = [
         rounded=True,
         highlight_color=colors[4],
         block_highlight_text_color=colors[4],
-        highlight_method="text",
+        highlight_method='text',
         this_current_screen_border=colors[4],
         this_screen_border=colors[2],
         other_current_screen_border=colors[2],
@@ -143,7 +143,7 @@ widget_list = [
     ),
     widget.TextBox(
         text=right,
-        font="MesloLGS NF",
+        font='MesloLGS NF',
         fontsize=26,
         foreground=transparency(colors[2], 8),
         background=transparency(),
@@ -153,31 +153,31 @@ widget_list = [
     ),
     widget.TextBox(
         text=left,
-        font="MesloLGS NF",
+        font='MesloLGS NF',
         fontsize=26,
         foreground=transparency(colors[2], 8),
         background=transparency(),
-        mouse_callbacks={"Button1": openCalendar}
+        mouse_callbacks={'Button1': openCalendar}
     ),
     widget.Clock(
         format=' %H:%M',
         background=transparency(colors[2], 8),
         foreground=colors[4],
-        mouse_callbacks={"Button1": openCalendar}
+        mouse_callbacks={'Button1': openCalendar}
     ),
     widget.TextBox(
         text=right,
-        font="MesloLGS NF",
+        font='MesloLGS NF',
         fontsize=26,
         foreground=transparency(colors[2], 8),
         background=transparency(),
-        mouse_callbacks={"Button1": openCalendar}
+        mouse_callbacks={'Button1': openCalendar}
     ),
     widget.Spacer(
         background=transparency()
     ),
     widget.TextBox(
-        font="MesloLGS NF",
+        font='MesloLGS NF',
         fontsize=26,
         foreground=transparency(colors[2], 8),
         background=transparency(),       text=left,
@@ -187,11 +187,11 @@ widget_list = [
         foreground=colors[4],
         background=transparency(colors[2], 8),
         format='  {essid}',
-        disconnected_message="睊 ",
+        disconnected_message='睊 ',
         mouse_callbacks={'Button1': open_nm, 'Button3': openbt}
     ),
     widget.TextBox(
-        font="MesloLGS NF",
+        font='MesloLGS NF',
         fontsize=26,
         text=right,
         foreground=transparency(colors[2], 8),
@@ -204,39 +204,39 @@ widget_list = [
     ),
     widget.TextBox(
         text=left,
-        font="MesloLGS NF",
+        font='MesloLGS NF',
         fontsize=26,
         foreground=transparency(colors[2], 8),
         background=transparency(),
-        mouse_callbacks={"Button1": show_notifies, "Button3": delete_notifications}
+        mouse_callbacks={'Button1': show_notifies, 'Button3': delete_notifications}
     ),
     widget.TextBox(
-        text=" ",
+        text=' ',
         foreground=colors[4],
         background=transparency(colors[2], 8),
-        mouse_callbacks={"Button1": show_notifies, "Button3": delete_notifications}
+        mouse_callbacks={'Button1': show_notifies, 'Button3': delete_notifications}
     ),
     widget.TextBox(
         text=right,
-        font="MesloLGS NF",
+        font='MesloLGS NF',
         fontsize=26,
         foreground=transparency(colors[2], 8),
         background=transparency(),
-        mouse_callbacks={"Button1": show_notifies, "Button3": delete_notifications}
+        mouse_callbacks={'Button1': show_notifies, 'Button3': delete_notifications}
     ),        
     widget.Spacer(
         length=12,
         background=transparency()
     ),
     widget.TextBox(
-        font="MesloLGS NF",
+        font='MesloLGS NF',
         fontsize=26,
         text=left,
         foreground=transparency(colors[2], 8),
         background=transparency(),
     ),
     widget.Battery(
-        format="{char} {percent:2.0%}",
+        format='{char} {percent:2.0%}',
         charge_char='',
         discharge_char='',
         empty_char='',
@@ -245,7 +245,7 @@ widget_list = [
         background=transparency(colors[2], 8)
     ),
     widget.TextBox(
-        font="MesloLGS NF",
+        font='MesloLGS NF',
         fontsize=26,
         text=right,
         foreground=transparency(colors[2], 8),
@@ -257,13 +257,13 @@ widget_list = [
     ),
     widget.TextBox(
         text=left,
-        font="MesloLGS NF",
+        font='MesloLGS NF',
         fontsize=26,
         foreground=transparency(colors[2], 8),
         background=transparency(),
     ),
     widget.TextBox(
-        text="墳 ",
+        text='墳 ',
         foreground=colors[4],
         background=transparency(colors[2], 8),
     ),
@@ -274,7 +274,7 @@ widget_list = [
     ),
     widget.TextBox(
         text=right,
-        font="MesloLGS NF",
+        font='MesloLGS NF',
         fontsize=26,
         foreground=transparency(colors[2], 8),
         background=transparency(),
@@ -290,7 +290,7 @@ taskbar=[
         background=transparency()
     ),
     widget.TextBox(
-        font="MesloLGS NF",
+        font='MesloLGS NF',
         fontsize=26,
         text=left,
         foreground=colors[1],
@@ -301,16 +301,16 @@ taskbar=[
         border=colors[3],
         unfocused_border=transparency(colors[2], 6),
         parse_text=chname,
-        highlight_method="block",
-        txt_floating="  ",
-        txt_maximized="  ",
-        txt_minimized="  ",
-        title_width_method="uniform",
+        highlight_method='block',
+        txt_floating='  ',
+        txt_maximized='  ',
+        txt_minimized='  ',
+        title_width_method='uniform',
         icon_size=0,
-        mouse_callbacks = {"Button2": lambda: qtile.current_window.kill()}
+        mouse_callbacks = {'Button2': lambda: qtile.current_window.kill()}
     ),
     widget.TextBox(
-        font="MesloLGS NF",
+        font='MesloLGS NF',
         fontsize=26,
         text=right,
         foreground=colors[1],
