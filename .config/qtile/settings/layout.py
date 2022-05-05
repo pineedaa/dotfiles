@@ -1,15 +1,7 @@
 # Carlos Pineda
 
 from libqtile import layout
-
-colors = [
-        '#282a36',
-        '#44475a',
-        '#5a5e77',
-        '#717593',
-        '#f8f8f2',
-        '#000000'
-        ]
+from .colors import colors
 
 layout_theme = {
         'margin': 6,
