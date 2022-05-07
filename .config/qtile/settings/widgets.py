@@ -18,6 +18,9 @@ extension_defaults = widget_defaults.copy()
 def transparency(color = '#000000', opacity = 0):
     return color + '.' + str(opacity)
 
+def transparency_gradient(color = ['#000000', '#ffffff'], opacity = 0):
+    return [color[0] + '.' + str(opacity), color[1] + '.' + str(opacity)]
+
 def chname(text):
     for string in ['Firefox', 'Alacritty', 'Thunar', 'Spotify', 'Code', 'MARS', 'DrRacket', '@cArchLinux']:
         if string in text:
