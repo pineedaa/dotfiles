@@ -16,7 +16,7 @@ set smarttab      " inserts blanks on a <tab> key (as per sw, ts and sts).
 
 " atajos de teclado
 nmap <leader>fq :q!<cr>
-nmap <leader>qq :wq<cr>
+nmap <leader>qq :bdelete<cr>
 nmap <leader>w :w<cr>
 inoremap <silent>II <esc>
 nmap <leader>tt :colorscheme <c-d>
@@ -80,6 +80,8 @@ Plug 'dikiaap/minimalist'
 Plug 'joshdick/onedark.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'bumaociyuan/vim-swift'
+
 " If you want to have icons in your statusline choose one of these
 Plug 'kyazdani42/nvim-web-devicons'
 
