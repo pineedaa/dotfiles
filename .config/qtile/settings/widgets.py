@@ -11,7 +11,6 @@ widget_defaults = dict(
     padding=0,
     background='#282a36'
 )
-
 extension_defaults = widget_defaults.copy()
 
 # Función que sirve para asignarle transparencia a un color
@@ -53,6 +52,26 @@ def openCalendar():
 def open_nm():
     qtile.cmd_spawn('alacritty -e nmtui')
 
+# Abre firefox
+def openFirefox():
+    qtile.cmd_spawn('firefox')
+
+# Abre el gestor de archivos
+def openFiles():
+    qtile.cmd_spawn('nautilus')
+
+# Abre neovim
+def openVim():
+    qtile.cmd_spawn('alacritty -e nvim')
+
+# Abre code-oss
+def openCode():
+    qtile.cmd_spawn('code')
+
+# Abre el terminal
+def openTerminal():
+    qtile.cmd_spawn('alacritty')
+
 # Recupera las notificaciones
 def show_notifies():
     os.system('dunstctl history-pop')
@@ -63,7 +82,7 @@ def delete_notifications():
 
 # Abre el bluetoothctl en cosola
 def openbt():
-    qtile.cmd_spawn('alacritty -e bluetoothctl')
+    qtile.cmd_spawn('blueman-manager')
 
 widget_defaults = dict(
     font='UbuntuMono Nerd Font',
@@ -314,5 +333,60 @@ taskbar=[
     ),
     widget.Spacer(
         background=transparency()
+    ),
+    widget.Systray(
+        background=transparency()
+    ),
+    widget.Spacer(
+        length=12,
+        background=transparency()
     )
+]
+
+icons = [
+    widget.Spacer(
+        length=12,
+        background=transparency()
+    ),
+    widget.Image(
+        filename='~/.config/qtile/icons/adventures-of-shuggy.svg',
+        background=transparency(),
+        mouse_callbacks={'Button1': openMenu}
+    ),
+    widget.Spacer(
+        length=12,
+        background=transparency()
+    ),
+    widget.Image(
+        filename='~/.config/qtile/icons/firefox-trunk.svg',
+        background=transparency(),
+        mouse_callbacks={'Button1': openFirefox}
+    ),
+    widget.Spacer(
+        length=12,
+        background=transparency()
+    ),
+    widget.Image(
+        filename='~/.config/qtile/icons/system-file-manager.svg',
+        background=transparency(),
+        mouse_callbacks={'Button1': openFiles}
+    ),
+    widget.Spacer(
+        length=12,
+        background=transparency()
+    ),
+    widget.Image(
+        filename='~/.config/qtile/icons/Alacritty.svg',
+        background=transparency(),
+        mouse_callbacks={'Button1': openTerminal}
+    ),
+    widget.Spacer(
+        length=12,
+        background=transparency()
+    ),
+    widget.Image(
+        filename='~/.config/qtile/icons/visual-studio-code.svg',
+        background=transparency(),
+        mouse_callbacks={'Button1': openCode}
+    ),
 ]

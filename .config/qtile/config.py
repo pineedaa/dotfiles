@@ -20,6 +20,8 @@ def autostart():
     # changewp()
     os.system('feh --bg-fill ~/.config/qtile/settings/wallpaper.png')
     os.system('lowbattery &')
+    os.system('nm-applet &')
+    os.system('blueman-applet &')
     os.system('picom &')
 
 # Función que utilizaremos para cambiar de area de trabajo

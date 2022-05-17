@@ -65,7 +65,7 @@ keys = [
         desc='Abrir menú'),
     Key([mod], 'e', lazy.spawn('alacritty -e ranger'),
         desc='Abrir gestor de archivos en cli'),
-    Key([mod, 'shift'], 'e', lazy.spawn('thunar'),
+    Key([mod, 'shift'], 'e', lazy.spawn('nautilus'),
         desc='Abrir gestor de archivos'),
     Key([mod, 'shift'], 'm', lazy.spawn('rofi -show'),
         desc='Abrir menú para ventanas abiertas'),
