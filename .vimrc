@@ -19,7 +19,8 @@ nmap <leader>fq :q!<cr>
 nmap <leader>qq :bdelete<cr>
 nmap <leader>w :w<cr>
 inoremap <silent>II <esc>
-nmap <leader>tt :colorscheme <c-d>
+nmap <leader>ct :colorscheme<c-d>
+nmap <leader>tt :split<cr> :terminal<cr>
 nmap <leader>nn :NERDTreeToggle<cr>
 
 " navegar entre buffers
@@ -36,6 +37,15 @@ nnoremap <C-l> <C-w>l
 nmap <leader>v :vsplit<cr>
 nmap <leader>h :split<cr>
 
+" salir de la terminal
+tnoremap <silent>II  <C-\><C-n>
+tnoremap <Esc> <C-\><C-n>
+
+" cambiar de buffer desde la terminal
+tnoremap <C-h> <C-\><C-N><C-w>h
+tnoremap <C-j> <C-\><C-N><C-w>j
+tnoremap <C-k> <C-\><C-N><C-w>k
+tnoremap <C-l> <C-\><C-N><C-w>l
 
 " vim coc
 inoremap <silent><expr> <tab>
