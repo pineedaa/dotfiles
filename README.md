@@ -23,6 +23,8 @@
 - [Feh](https://archlinux.org/packages/extra/x86_64/feh/)
 - [Gsimplecal](https://archlinux.org/packages/community/x86_64/gsimplecal/)
 - [Ccls](https://archlinux.org/packages/community/x86_64/ccls/)
+- [Blueman](https://wiki.archlinux.org/title/Blueman)
+- [Network Manager applet](https://archlinux.org/packages/extra/x86_64/network-manager-applet/)
 
 ### Paquetes instalados de repositorios no oficiales (AUR)
 - [UbuntuMono Nerd Font](https://aur.archlinux.org/packages/nerd-fonts-ubuntu-mono)
