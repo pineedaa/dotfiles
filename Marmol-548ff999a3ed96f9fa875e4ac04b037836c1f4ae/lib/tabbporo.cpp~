@@ -1,0 +1,27 @@
+#include "tabbporo.h"
+
+TNodoABB::TNodoABB() : item(), iz(), de() {
+
+}
+
+TNodoABB::TNodoABB(const TNodoABB &nodo) : item(nodo.item), iz(nodo.iz), de(nodo.de) {
+	
+}
+
+TNodoABB::~TNodoABB() {
+  
+}
+
+TNodoABB & TNodoABB::operator=(const TNodoABB &nodo) {
+	if(this != nodo) {
+		this.~TNodoABB();
+
+		item = nodo.item;
+		iz = nodo.iz;
+		de = nodo.de;
+	}
+
+	return this;
+}
+
+//////////////////////////////// TABBPoro ////////////////////////////////
