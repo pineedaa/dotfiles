@@ -1,0 +1,21 @@
+(defpoll time
+  :interval "10s"
+  :initial "12:00:00"
+  :run-while true
+  'date +%H:%M')
+
+(defwindow reloj
+  :monitor 0
+  :geometry (geometry
+              :x "0%"
+              :y "80px"
+              :anchor "top right")
+
+  :stacking "bg"
+  :wm-ignore true
+
+  (box :class "clock"
+    :orientation "vertical"
+    :valign "center"
+    :halign "center"
+    time))
