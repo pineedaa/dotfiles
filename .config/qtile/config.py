@@ -23,6 +23,7 @@ def autostart():
     os.system('nm-applet &')
     os.system('blueman-applet &')
     os.system('picom &')
+    os.system('eww daemon; eww open reloj')
 
 # Función que utilizaremos para cambiar de area de trabajo
 def get_key(name):

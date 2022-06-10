@@ -61,7 +61,7 @@ keys = [
         desc='Lanzar terminal'),
     Key([mod], 'b', lazy.spawn('firefox'),
         desc='Abrir firefox'),
-    Key([mod], 'm', lazy.spawn('rofi -show run'),
+    Key([mod], 'm', lazy.spawn('rofi -show run -theme ~/.config/rofi/themes/photon-violet.rasi'),
         desc='Abrir menú'),
     Key([mod], 'e', lazy.spawn('alacritty -e ranger'),
         desc='Abrir gestor de archivos en cli'),

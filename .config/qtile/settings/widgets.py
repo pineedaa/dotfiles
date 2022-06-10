@@ -43,7 +43,7 @@ def openRandomMenu():
 
 # Abre rofi
 def openMenu():
-    qtile.cmd_spawn('rofi -show run')
+    qtile.cmd_spawn('rofi -show run -theme ~/.config/rofi/themes/photon-violet.rasi')
 
 def openCalendar():
     qtile.cmd_spawn('gsimplecal')
@@ -95,7 +95,7 @@ extension_defaults = widget_defaults.copy()
 
 
 left = ''
-right = ''
+right = ' '
 
 widget_list = [
     widget.Spacer(
@@ -125,7 +125,7 @@ widget_list = [
         mouse_callbacks={'Button1': openMenu}
     ),        
     widget.Spacer(
-        length=12,
+        length=0,
         background=transparency()
     ),
     widget.TextBox(
@@ -214,7 +214,7 @@ widget_list = [
         mouse_callbacks={'Button1': open_nm, 'Button3': openbt}
     ),
     widget.Spacer(
-        length=24,
+        length=12,
         background=transparency()
     ),
     widget.TextBox(
@@ -240,7 +240,7 @@ widget_list = [
         mouse_callbacks={'Button1': show_notifies, 'Button3': delete_notifications}
     ),        
     widget.Spacer(
-        length=12,
+        length=0,
         background=transparency()
     ),
     widget.TextBox(
@@ -257,7 +257,9 @@ widget_list = [
         empty_char='',
         unknown_char='',
         foreground=colors[4],
-        background=colors[2]
+        background=colors[2],
+        low_foreground='#FF0000',
+        low_percentage=0.2
     ),
     widget.TextBox(
         font='MesloLGS NF',
@@ -267,7 +269,7 @@ widget_list = [
         background=transparency(),
     ),
     widget.Spacer(
-        length=12,
+        length=0,
         background=transparency()
     ),
     widget.TextBox(
@@ -293,9 +295,9 @@ widget_list = [
         fontsize=26,
         foreground=colors[2],
         background=transparency(),
-    ),        
+    ),
     widget.Spacer(
-        length=12,
+        length=0,
         background=transparency()
     ),
 ]
