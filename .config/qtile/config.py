@@ -25,35 +25,29 @@ def autostart():
     os.system('picom &')
     os.system('eww daemon; eww open reloj')
 
-# Función que utilizaremos para cambiar de area de trabajo
-def get_key(name):
-    return [k for k, g in grupos.items() if g.name == name][0]
-
 # Con esta función ponemos un fondo de pantalla aleatorio en la ruta que especifiquemos
 def changewp():
     wallpapers = os.listdir('~/Images/Wallpapers/')
     os.system('feh --bg-fill ~/Images/Wallpapers/' + wallpapers[random.randint(0, numpy.size(wallpapers) - 1)])
 
-grupos = {
-        1: Group(''),
-        2: Group(' '),
-        3: Group(' '),
-        4: Group(' '),
-        5: Group(' '),
-        6: Group(' '),
-        7: Group(' ')
+groups = {
+        Group(name="1", position=1, label=''),
+        Group(name="2", position=2, label=' '),
+        Group(name="3", position=3, label=' '),
+        Group(name="4", position=4, label=' '),
+        Group(name="5", position=5, label=' '),
+        Group(name="6", position=6, label=' '),
+        Group(name="7", position=7, label=' ')
         }
-
-groups = [grupos[i] for i in grupos]
 
 for i in groups:
     keys.extend([
         # mod + índice para ir al grupo
-        Key([mod], str(get_key(i.name)), lazy.group[i.name].toscreen(),
+        Key([mod], i.name, lazy.group[i.name].toscreen(),
             desc='Cambiar al grupo {}'.format(i.name)),
 
         # mod + shift + índice del grupo para mover la ventana al grupo e ir
-        Key([mod, 'shift'], str(get_key(i.name)), lazy.window.togroup(i.name, switch_group=True),
+        Key([mod, 'shift'], i.name, lazy.window.togroup(i.name, switch_group=True),
             desc='Mover la ventana e ir al grupo {}'.format(i.name))
     ])
 
