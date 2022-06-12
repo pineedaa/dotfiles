@@ -117,6 +117,7 @@ orange = [
 
 
 dracula_theme = [
+        '#121212', # Black
         '#282a36', # Background
         '#44475a', # Current Line
         '#44475a', # Selection
