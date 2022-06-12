@@ -31,6 +31,7 @@
 - [UbuntuMono Nerd Font](https://aur.archlinux.org/packages/nerd-fonts-ubuntu-mono)
 - [Utd](https://github.com/kawaki-san/utd-rs)
 - [Lowbattery](https://aur.archlinux.org/packages/low-battery-warning-git)
+- [EWW](https://aur.archlinux.org/packages/eww-git)
 
 ### Librerías python (pip)
 - [Psutil](https://pypi.org/project/psutil/)
