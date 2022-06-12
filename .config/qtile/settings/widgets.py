@@ -58,7 +58,7 @@ def openFirefox():
 
 # Abre el gestor de archivos
 def openFiles():
-    qtile.cmd_spawn('nautilus')
+    qtile.cmd_spawn('thunar')
 
 # Abre neovim
 def openVim():
