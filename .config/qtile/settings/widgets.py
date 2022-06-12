@@ -175,7 +175,7 @@ widget_list = [
         mouse_callbacks={'Button1': openCalendar}
     ),
     widget.Clock(
-        format=' %H:%M',
+        format='  %A, %d de %B  %H:%M',
         background=colors[2],
         foreground=colors[4],
         mouse_callbacks={'Button1': openCalendar}
