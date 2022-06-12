@@ -25,6 +25,7 @@
 - [Ccls](https://archlinux.org/packages/community/x86_64/ccls/)
 - [Blueman](https://wiki.archlinux.org/title/Blueman)
 - [Network Manager applet](https://archlinux.org/packages/extra/x86_64/network-manager-applet/)
+- [Tumbler](https://archlinux.org/packages/extra/x86_64/tumbler/)
 
 ### Paquetes instalados de repositorios no oficiales (AUR)
 - [UbuntuMono Nerd Font](https://aur.archlinux.org/packages/nerd-fonts-ubuntu-mono)
